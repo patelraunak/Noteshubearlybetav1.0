@@ -1,0 +1,6 @@
+{
+  "name": "Notes Hub — Academic Resource & Study Platform",
+  "description": "Centralized student learning and resource management platform to upload, organize, search, read, bookmark, and revise study materials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
