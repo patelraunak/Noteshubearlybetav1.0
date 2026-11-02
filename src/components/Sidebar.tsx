@@ -135,7 +135,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </nav>
       </div>
 
-      {/* Bottom User Profile & Account Settings */}
+      {/* Bottom Profile & Settings Shortcut */}
       <div className="p-3.5 border-t border-slate-200/80 dark:border-slate-800/80 space-y-1">
         <button
           type="button"
@@ -143,19 +143,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
           className="w-full p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors flex items-center justify-between gap-2.5 text-left group"
         >
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-9 h-9 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-display font-bold text-xs flex items-center justify-center shrink-0">
-              {user.name
+            <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-display font-bold text-xs flex items-center justify-center shrink-0">
+              {(user.name || user.role)
                 .split(' ')
                 .map((n) => n[0])
                 .join('')
-                .slice(0, 2)}
+                .slice(0, 2)
+                .toUpperCase()}
             </div>
             <div className="min-w-0">
               <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
-                {user.name}
+                {user.name || user.role}
               </p>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
-                {user.semester} · Account Settings
+                {user.role} · {user.semester}
               </p>
             </div>
           </div>

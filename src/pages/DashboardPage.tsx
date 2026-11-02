@@ -82,10 +82,10 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
       <section className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="max-w-2xl">
           <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-1.5">
-            {user.university} · {user.department} · {user.semester}
+            Academic Study Workspace · Curated Notes & Revision Hub
           </p>
           <h1 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 dark:text-white tracking-tight text-balance">
-            Welcome back, {user.name.split(' ')[0]}. Ready for your next study session?
+            Welcome to Notes Hub. Ready for your next study session?
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
             Your centralized academic hub for lecture notes, formula sheets, and exam revision. Upload new study materials or pick up right where you left off.

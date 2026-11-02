@@ -277,7 +277,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           )}
         </div>
 
-        {/* User Profile Dropdown */}
+        {/* Profile Dropdown (Guest / Student) */}
         <div ref={profileRef} className="relative">
           <button
             type="button"
@@ -286,28 +286,31 @@ export const TopBar: React.FC<TopBarProps> = ({
             aria-label="User profile menu"
           >
             <div className="w-7 h-7 rounded-full bg-indigo-600 text-white font-display font-bold text-xs flex items-center justify-center">
-              {user.name
+              {(user.name || user.role)
                 .split(' ')
                 .map((n) => n[0])
                 .join('')
-                .slice(0, 2)}
+                .slice(0, 2)
+                .toUpperCase()}
             </div>
             <span className="hidden md:inline text-xs font-medium text-slate-800 dark:text-slate-200 max-w-[110px] truncate">
-              {user.name}
+              {user.name || user.role}
             </span>
           </button>
 
           {profileOpen && (
             <div className="absolute right-0 mt-2 w-60 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-1.5 z-40">
               <div className="px-4 py-2.5 border-b border-slate-100 dark:border-slate-800">
-                <p className="text-xs font-semibold text-slate-900 dark:text-slate-100">
-                  {user.name}
-                </p>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
-                  {user.email}
-                </p>
-                <p className="text-[11px] text-indigo-600 dark:text-indigo-400 mt-1">
-                  {user.department} · {user.semester}
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
+                    {user.name || user.role}
+                  </p>
+                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400">
+                    {user.role}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-1">
+                  {user.department ? `${user.department} · ` : ''}{user.semester}
                 </p>
               </div>
 
@@ -321,7 +324,7 @@ export const TopBar: React.FC<TopBarProps> = ({
                   className="w-full px-4 py-2 text-left text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2.5"
                 >
                   <FolderKanban className="w-4 h-4 text-slate-400" />
-                  <span>My Uploaded Library</span>
+                  <span>My Study Library</span>
                 </button>
                 <button
                   type="button"
@@ -343,7 +346,7 @@ export const TopBar: React.FC<TopBarProps> = ({
                   className="w-full px-4 py-2 text-left text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2.5"
                 >
                   <Settings className="w-4 h-4 text-slate-400" />
-                  <span>Profile & Theme Settings</span>
+                  <span>Edit Profile & Settings</span>
                 </button>
               </div>
             </div>

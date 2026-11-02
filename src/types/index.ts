@@ -32,7 +32,7 @@ export interface User {
   semester: string;
   studentId: string;
   bio: string;
-  role: 'Student' | 'Class Representative' | 'Teaching Assistant';
+  role: 'Guest' | 'Student';
   joinedDate: string;
   themePreference: 'light' | 'dark';
   defaultViewMode: 'grid' | 'list';

@@ -1,12 +1,12 @@
 import { User, AppNotification } from '../types';
 import { INITIAL_USER, INITIAL_NOTIFICATIONS } from '../data/mockData';
 
-const USER_STORAGE_KEY = 'noteshub_user_v1';
+const USER_STORAGE_KEY = 'noteshub_user_v3';
 const THEME_STORAGE_KEY = 'noteshub_theme_v1';
 const NOTIFICATIONS_STORAGE_KEY = 'noteshub_notifications_v1';
 
 /**
- * Dedicated userService for managing student profile, appearance preferences, and notifications.
+ * Dedicated userService for managing student/guest profile, appearance preferences, and notifications.
  */
 export const userService = {
   async getCurrentUser(): Promise<User> {
@@ -16,7 +16,11 @@ export const userService = {
         localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(INITIAL_USER));
         return INITIAL_USER;
       }
-      return JSON.parse(raw) as User;
+      const parsed = JSON.parse(raw) as User;
+      if (parsed.role !== 'Guest' && parsed.role !== 'Student') {
+        parsed.role = 'Student';
+      }
+      return parsed;
     } catch {
       return INITIAL_USER;
     }

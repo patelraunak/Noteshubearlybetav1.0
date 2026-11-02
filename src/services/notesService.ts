@@ -1,10 +1,10 @@
 import { Note, Review, SortOption, FileType, RecentlyViewedEntry } from '../types';
 import { INITIAL_NOTES, INITIAL_REVIEWS, INITIAL_RECENTLY_VIEWED } from '../data/mockData';
 
-const NOTES_STORAGE_KEY = 'noteshub_notes_v1';
-const REVIEWS_STORAGE_KEY = 'noteshub_reviews_v1';
-const RECENT_STORAGE_KEY = 'noteshub_recent_v1';
-const SCRATCHPAD_STORAGE_KEY = 'noteshub_scratchpad_v1';
+const NOTES_STORAGE_KEY = 'noteshub_notes_v3';
+const REVIEWS_STORAGE_KEY = 'noteshub_reviews_v3';
+const RECENT_STORAGE_KEY = 'noteshub_recent_v3';
+const SCRATCHPAD_STORAGE_KEY = 'noteshub_scratchpad_v3';
 
 function getStoredNotes(): Note[] {
   try {

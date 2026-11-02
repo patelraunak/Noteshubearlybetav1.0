@@ -635,7 +635,7 @@ export const NoteDetailsPage: React.FC<NoteDetailsPageProps> = ({
               </div>
 
               <div className="pt-3 border-t border-slate-200/70 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
-                <p>Ready for backend cloud storage & real PDF stream URLs via FastAPI.</p>
+                <p>Your personal study notes are saved automatically to your library.</p>
               </div>
             </div>
           </div>

@@ -181,11 +181,11 @@ export const UploadNotesPage: React.FC<UploadNotesPageProps> = ({
         </button>
       </div>
 
-      {/* Simulated Upload Notice Banner */}
-      <div className="p-4 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/60 flex items-start gap-3">
-        <Info className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-        <div className="text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
-          <strong>Frontend Simulation Mode:</strong> Uploaded files are validated in your browser and their metadata is persisted in <code className="font-mono">localStorage</code> so your notes remain accessible across page reloads. When connected to the future Python FastAPI + cloud storage backend, binary files will stream directly to object storage.
+      {/* Supported Formats Notice */}
+      <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/70 dark:border-indigo-800/60 flex items-start gap-3">
+        <Info className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5" />
+        <div className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+          <strong>Centralized Study Storage:</strong> Upload PDF lecture notes, DOCX summaries, PPTX slides, or Markdown study guides. Your uploaded resources are organized by subject, semester, and tags in your personal study library.
         </div>
       </div>
 
